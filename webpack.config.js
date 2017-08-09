@@ -1,3 +1,7 @@
+'use strict';
+
+const uppercaseTransformer = require('./uppercase-transformer');
+
 module.exports = {
     entry: './src/index.ts',
     output: {
@@ -8,7 +12,20 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /.ts$/, use: 'awesome-typescript-loader' }
+            {
+                test: /.ts$/,
+                use: {
+                    loader: 'awesome-typescript-loader',
+                    options: {
+                        getCustomTransformers() {
+                            return {
+                                before: [uppercaseTransformer],
+                                after: [],
+                            };
+                        }
+                    },
+                },
+            }
         ]
     }
 };
