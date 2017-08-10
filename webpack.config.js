@@ -1,6 +1,6 @@
 'use strict';
 
-const uppercaseTransformer = require('./uppercase-transformer');
+const uppercaseTransformer = require('./simple/uppercase-transformer');
 
 module.exports = {
     entry: './src/index.ts',
