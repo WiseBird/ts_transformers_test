@@ -1,6 +1,6 @@
 const ts = require('typescript');
 const uppercaseTransformer = require('./uppercase-transformer');
-const fileName = `${__dirname}/src/module.ts`;
+const fileName = `./src/module.ts`;
 
 const program = ts.createProgram([fileName], {module: 'commonjs', target: ts.ScriptTarget.ES5});
 

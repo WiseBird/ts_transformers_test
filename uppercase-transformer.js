@@ -6,6 +6,7 @@ module.exports = function uppercaseTransformer(context) {
     let visitor = function (node) {
         if (node.kind === ts.SyntaxKind.StringLiteral) {
             let text = node.text;
+            // console.log(text);
             if (text[0] !== '.' && text !== text.toUpperCase()) {
                 return ts.createLiteral(text.toUpperCase());
             }
