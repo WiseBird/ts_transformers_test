@@ -1,0 +1,1 @@
+Several simple example of how to apply transformers to typescript code.
